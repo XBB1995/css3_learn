@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" manifest="demo.appcache">
+    <title>练习</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            /*background-color: #fff;*/
+        }
+
+        .header {
+            /*width: 1000px;*/
+            height: 200px;
+            background-color: #bfa;
+            margin: 0 auto;
+        }
+
+        .navigator {
+            /*width: 1000px;*/
+            /*height: 30px;*/
+            background-color: deepskyblue;
+            /*border: 5px solid red;*/
+            margin: 10px auto;
+            /*overflow: hidden;*/
+        }
+
+        .navigator li {
+            float: left;
+            width: 25%;
+        }
+
+        .a1 {
+            text-decoration: none;
+            font-weight: bold;
+            font-family: "华文楷体", "微软雅黑 Light", serif;
+            color: #FFFFFF;
+            /*width: 12.5%;*/
+            text-align: center;
+            /*float: left;*/
+            display: block;
+            padding: 5px 0;
+            /*margin: 0 5px;*/
+            /*background-color: deepskyblue;*/
+        }
+
+        /*解决高度坍塌问题*/
+        .clearfix:after,
+        .clearfix:before {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .a1:link {
+
+        }
+
+        .a1:visited {
+
+        }
+
+        .a1:hover {
+            background-color: #CC0000;
+            color: gray;
+        }
+
+        .a1:active {
+
+        }
+
+        .content {
+            /*width: 1000px;*/
+            /*width: 100%;*/
+            height: 400px;
+            background-color: red;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: row;
+            /*position: relative;*/
+            /*padding: 0 200px;*/
+            /*align-content: center;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+        }
+
+        .weather {
+            /*width: 580px;*/
+            width: 100%;
+            height: 400px;
+            background-color: green;
+            /*margin: 0px 10px;*/
+            /*display: flex;*/
+            /*float: left;*/
+            /*margin-left: -100%;*/
+            flex: 1;
+        }
+
+        .news {
+            width: 200px;
+            height: 400px;
+            background-color: blueviolet;
+            /*margin: 0px auto;*/
+            /*display: flex;*/
+            /*float: left;*/
+            /*position: absolute;*/
+            /*left: 0;*/
+            /*margin-left: -100%;*/
+            flex: 0 0 200px;
+            order: -1;
+        }
+
+        .sport {
+            width: 200px;
+            height: 400px;
+            background-color: orange;
+            /*margin: 0px auto;*/
+            /*display: flex;*/
+            /*float: right;*/
+            /*position: absolute;*/
+            /*right: 0;*/
+            /*top: 0;*/
+            /*float: left;*/
+            /*margin-left: -50%;*/
+            flex: 0 0 150px;
+        }
+
+        .footer {
+            /*width: 1000px;*/
+            height: 200px;
+            background-color: lightseagreen;
+            margin: 5px auto;
+            /*clear: both;*/
+            /*float: left;*/
+        }
+
+        form {
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        form > fieldset {
+            padding: 10px;
+        }
+
+        form > fieldset > input {
+            width: 100%;
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding-left: 5px;
+            box-sizing: border-box;
+        }
+
+        .first ~ li {
+            color: green;
+        }
+        .first {
+            color: red;
+        }
+        .first + li {
+            color: white;
+        }
+
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="style.css"/>-->
+</head>
+<body>
+<!--头部-->
+<div id="newslist" class="header ">
+    <h1 style="color: #F0000F;text-align: center;">今日新闻</h1>
+</div>
+<!--导航条-->
+<div class="navigator clearfix">
+    <ul style="list-style-type: none;">
+        <li><a href="#" class="a1">国家</a></li>
+        <li><a href="#" class="a1">城市</a></li>
+        <li><a href="#" class="a1">城区</a></li>
+        <li><a href="#" class="a1">街道</a></li>
+    </ul>
+</div>
+<!--内容-->
+<!--<div class="content">-->
+    <!--<div class="news">-->
+        <!--<form action="">-->
+            <!--<fieldset>-->
+                <!--<legend>学生档案</legend>-->
+                <!--<label for="username">姓名：</label>-->
+                <!--<input type="text" name="username"-->
+                       <!--id="username" placeholder="请输入姓名">-->
+                <!--<label for="myphone">手机：</label>-->
+                <!--<input type="tel" name="phone"-->
+                       <!--id="myphone" placeholder="请输入手机">-->
+            <!--</fieldset>-->
+        <!--</form>-->
+    <!--</div>-->
+    <!--<div class="weather">-->
+        <!--<p id="pe" draggable="true">请狠狠拽我</p>-->
+        <!--<p id="pe1" draggable="true">也请狠狠拽我</p>-->
+        <!--<label>NBA赛季十佳球</label><br>-->
+        <!--&lt;!&ndash;<audio src="" id="myaudio" controls></audio>&ndash;&gt;-->
+        <!--<video data-video="itcast" src="" poster="h&c.jpg" controls width="30%"></video>-->
+        <!--&nbsp;-->
+        <!--<input id='btn' type="button" value="FullScreen">-->
+    <!--</div>-->
+    <!--<div class="sport">-->
+        <!--<form>-->
+            <!--<input type="file" value="上传头像" id="myPic" name="myPic"-->
+                   <!--onchange="getFileContent()">-->
+            <!--<img src="" alt="">-->
+        <!--</form>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="content">
+    <div class="weather">
+        <p id="pe" draggable="true">请狠狠拽我</p>
+        <p id="pe1" draggable="true">也请狠狠拽我</p>
+        <label>NBA赛季十佳球</label><br>
+        <!--<audio src="" id="myaudio" controls></audio>-->
+        <video data-video="itcast" src="" poster="h&c.jpg" controls width="30%"></video>
+        &nbsp;
+        <input id='btn' type="button" value="FullScreen">
+    </div>
+    <div class="news">
+        <form action="">
+            <fieldset>
+                <legend>学生档案</legend>
+                <label for="username">姓名：</label>
+                <input type="text" name="username"
+                       id="username" placeholder="请输入姓名">
+                <label for="myphone">手机：</label>
+                <input type="tel" name="phone"
+                       id="myphone" placeholder="请输入手机">
+            </fieldset>
+        </form>
+    </div>
+    <div class="sport">
+        <form>
+            <input type="file" value="上传头像" id="myPic" name="myPic"
+                   onchange="getFileContent()">
+            <img src="" alt="">
+        </form>
+    </div>
+</div>
+<script>
+
+    // 应用缓存
+
+
+    // sessionStorage 存储在当前页面 切换页面失效
+    // 生命周期 在关闭页面时就结束
+    sessionStorage.setItem("name", "XBB+1")
+
+    // 官方的位置获取接口 被墙了。。。
+    // var newsL = document.getElementById("newslist")
+    // if (navigator.geolocation) {
+    //     // enableHighAccuracy 是否使用高精度               console.log("in");
+    //     // timeout 设置超时时间
+    //     navigator.geolocation.getCurrentPosition(showPosition, showError, {})
+    // } else {
+    //     newsL.innerHTML = "GeoLocation is not supported by this browser."
+    // }
+    // function showPosition(position) {
+    //     console.log("in");
+    //     newsL.innerHTML = `already get your position Latitude=${position.coords.latitude}`
+    // }
+    // function showError(error) {
+    //     console.log(`${error.message}`);
+    // }
+
+    // 拖拽组件的实现 周期钩子函数
+    document.ondrag = function () {
+
+    }
+    document.ondragstart = function (e) {
+        // console.log(e);
+        e.target.style.opacity = 0.5
+        // e.target.parentNode.style.borderWidth = "5px"
+        // console.log(e.target.parentNode);
+        e.dataTransfer.setData("text/html", e.target.id)
+    }
+    document.ondragleave = function () {
+
+    }
+    document.ondragend = function (e) {
+        e.target.style.opacity = 1
+    }
+    // 下面是拖拽目标区域
+    document.ondragenter = function () {
+
+    }
+    document.ondragover = function (e) {
+        // console.log(e.target);
+        e.preventDefault()
+    }
+    document.ondrop = function (e) {
+        var id = e.dataTransfer.getData("text/html")
+        e.target.appendChild(document.getElementById(id))
+
+    }
+    document.ondragleave = function () {
+
+    }
+
+    // 获取文件时加载
+    function getFileContent() {
+        var reader = new FileReader()
+        var file = document.querySelector("#myPic").files
+        // console.log(reader.result);
+        reader.readAsDataURL(file[0])
+        reader.onload = function () {
+            document.querySelector("img").src = reader.result
+        }
+
+    }
+
+    function showValue() {
+        document.querySelector("progress").value += 10
+    }
+
+    window.addEventListener("online", () => {
+        console.log("online");
+        return 1;
+    })
+    var btn = document.querySelector("#btn")
+    var v = document.querySelector("video")
+    btn.addEventListener("click", function () {
+        v.webkitRequestFullscreen()
+        // console.log(document.fullscreenElement);
+    })
+</script>
+<!--底部-->
+<div class="footer">
+    <ul>
+        <li class="first">A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+    </ul>
+</div>
+
+</body>
+</html>

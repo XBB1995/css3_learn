@@ -1,0 +1,14 @@
+CACHE MANIFEST
+#必须是第一句
+
+#需要缓存的文件清单列表
+CACHE:
+#../images/11.jpg
+
+#配置每一次需要充服务器获取的文件清单列表
+NETWORK:
+#../images/11.jpg
+
+#配置如果文件无法获取则使用指定的文件进行替代
+FALLBACK:
+#../images/11.jpg ../images/banner.jpg

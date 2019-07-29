@@ -1,0 +1,16 @@
+p{
+    color: #F00;
+    font-size: 50px;
+}
+p::selection{
+    background-color: lime;
+}
+#h2{
+    font-family: "Segoe MDL2 Assets", serif;
+}
+#h2:hover{
+    font-family: "Times New Roman", sans-serif;
+}
+#pend a:last-child{
+    background-color: yellow;
+}

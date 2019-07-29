@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            margin: 100px auto;
+            width: 200px;
+            height: 600px;
+            background-color: #bfa;
+            transform-origin: top;
+            animation-name: mmove;
+            animation-duration: 0.8s;
+            animation-delay:0.2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+            -o-animation-timing-function: linear;
+            animation-timing-function: linear;
+        }
+        @keyframes mmove {
+            from {
+                transform: rotateZ(30deg);
+            }
+            25% {
+                transform: rotateZ(15deg);
+            }
+            50% {
+                transform: rotateZ(0deg);
+            }
+            75% {
+                transform: rotateZ(-15deg);
+            }
+            to {
+                transform: rotateZ(-30deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+</div>
+</body>
+</html>

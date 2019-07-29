@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>携程旅行 说走就走</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            /*height: 100%;*/
+            /*width: 100%;*/
+            display: flex;
+            flex-direction: column;
+            /*justify-content: flex-end;*/
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            /*flex: 1;*/
+        }
+
+        header > a {
+            flex: 1;
+        }
+
+        header > a > img {
+            width: 100%;
+        }
+
+        main {
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 5px;
+            /*flex: 2;*/
+        }
+        .item {
+            width: 100%;
+            /*height: 100px;*/
+            border-radius: 10px;
+            margin-top: 10px;
+            display: flex;
+        }
+        .item > .left {
+            flex: 1;
+            display: flex;
+        }
+        .item > .left > a {
+            width: 100%;
+            text-align: center;
+        }
+        .item > .left > a > img{
+            width: 30%;
+        }
+        .item > .right {
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+            /*column-count: 2;*/
+        }
+        .item > .right > a {
+            width: 50%;
+            display: block;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 50px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+            border-left: 1px solid white;
+        }
+        .item > .right > a:nth-last-of-type(-n+2) {
+            border-bottom: none;
+        }
+        .item:nth-of-type(even) {
+            background-color: lightpink;
+        }
+        .item:nth-of-type(odd) {
+            background-color: skyblue;
+        }
+        main > .extra {
+            width: 100%;
+            display: flex;
+        }
+        .extra > a {
+            flex: 1;
+            text-align: center;
+        }
+        footer {
+            width: 100%;
+            /*flex: 1;*/
+        }
+        nav {
+            width: 100%;
+            display: flex;
+            border-top: 1px dashed #666;
+            border-bottom: 1px dashed #666;
+        }
+        nav > a {
+            text-align: center;
+            text-decoration: none;
+            flex: 1;
+            color: #222;
+            font-size: 13px;
+            line-height: 30px;
+        }
+        .link {
+            text-align: center;
+        }
+        .link > a {
+            text-decoration: none;
+            color: #222;
+            font-size: 13px;
+            line-height: 30px;
+            margin: 5px;
+        }
+        footer > p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <a href="">
+            <img src="fly.jpg" alt="">
+        </a>
+    </header>
+    <main>
+        <section class="item">
+            <div class="left">
+                <a href="">
+                    <img src="1.png" alt="">
+                </a>
+            </div>
+            <div class="right">
+                <a href="">海外酒店</a>
+                <a href="">团购</a>
+                <a href="">特惠酒店</a>
+                <a href="">客栈公寓</a>
+            </div>
+        </section>
+        <section class="item">
+            <div class="left">
+                <a href="">
+                    <img src="2.png" alt="">
+                </a>
+            </div>
+            <div class="right">
+                <a href="">海外酒店</a>
+                <a href="">团购</a>
+                <a href="">特惠酒店</a>
+                <a href="">客栈公寓</a>
+            </div>
+        </section>
+        <section class="item">
+            <div class="left">
+                <a href="">
+                    <img src="3.png" alt="">
+                </a>
+            </div>
+            <div class="right">
+                <a href="">海外酒店</a>
+                <a href="">团购</a>
+                <a href="">特惠酒店</a>
+                <a href="">客栈公寓</a>
+            </div>
+        </section>
+        <section class="item">
+            <div class="left">
+                <a href="">
+                    <img src="4.png" alt="">
+                </a>
+            </div>
+            <div class="right">
+                <a href="">海外酒店</a>
+                <a href="">团购</a>
+                <a href="">特惠酒店</a>
+                <a href="">客栈公寓</a>
+            </div>
+        </section>
+        <section class="extra">
+            <a href="">
+                <img src="1.png" alt="">
+            </a>
+            <a href="">
+                <img src="2.png" alt="">
+            </a>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <a href="">电话预定</a>
+            <a href="">下载客户端</a>
+            <a href="">我的订单</a>
+        </nav>
+        <p class="link">
+            <a href="">网站地图</a>
+            <a href="">English</a>
+            <a href="">电脑版</a>
+        </p>
+        <p>&copy;2019 携程旅行</p>
+    </footer>
+</div>
+</body>
+</html>

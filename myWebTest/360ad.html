@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360 AD</title>
+    <link rel="stylesheet" href="css/fullpage.min.css">
+    <style>
+        .section1 {
+            background: url(http://idowebok.u.qiniudn.com/77/1.jpg) 50%;
+        }
+
+        .section2 {
+            background: url(http://idowebok.u.qiniudn.com/77/2.jpg) 50%;
+        }
+
+        .section3 {
+            background: url(http://idowebok.u.qiniudn.com/77/3.jpg) 50%;
+        }
+
+        .section4 {
+            background: url(http://idowebok.u.qiniudn.com/77/4.jpg) 50%;
+        }
+
+        .section1.current h3 {
+            font-size: 40px;
+        }
+
+        .section2.current h3 {
+            font-size: 40px;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/fullpage.min.js"></script>
+</head>
+<body>
+<div id="dowebok">
+    <div class="section section1">
+        <h3>第一屏</h3>
+    </div>
+    <div class="section section2">
+        <h3>第二屏</h3>
+    </div>
+    <div class="section section3">
+        <h3>第三屏</h3>
+    </div>
+    <div class="section section4">
+        <h3>第四屏</h3>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#dowebok').fullpage({
+            // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90']
+            afterLoad: function (anchorLink, index) {
+                $(".section").removeClass("current");
+                // console.log(anchorLink);
+                // console.log(index.index);
+                $(".section").eq(index.index).addClass("current");
+            }
+        });
+    })
+</script>
+</body>
+</html>

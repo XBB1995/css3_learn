@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*.content {*/
+            /*width: 100px;*/
+            /*height: auto;*/
+            /*border: 10px solid red;*/
+            /*margin: 100px auto;*/
+            /*!*background: linear-gradient(red, blue);*!*/
+            /*!*background: url("h&c.jpg") center;*!*/
+            /*!*background-size: cover;*!*/
+            /*!*默认渐变到最远的角*!*/
+            /*!*background: repeating-radial-gradient(red 0%, red 10%, blue 10%,blue 20%);*!*/
+            /*!*border-image:*!*/
+            /*border-image-source: url("border.png");*/
+            /*!*设置受保护的区域*!*/
+            /*border-image-slice: 10 fill;*/
+            /*!*一般和原来的边框宽度一致*!*/
+            /*border-image-width: 10px;*/
+            /*!*border-image-repeat: stretch;*!*/
+            /*!*position: absolute;*!*/
+            /*!*left: 100px;*!*/
+            /*!*top: 200px;*!*/
+            /*!*-webkit-transition: left 2s ease 1s;*!*/
+            /*!*-moz-transition: left 2s ease 1s;*!*/
+            /*!*-ms-transition: left 2s ease 1s;*!*/
+            /*!*-o-transition: left 2s ease 1s;*!*/
+            /*!*transition: left 2s ease 1s;*!*/
+            /*transition: all 0.4s ease;*/
+        /*}*/
+
+        /*.content:active {*/
+            /*!*transform: translateX(100px);*!*/
+            /*!*left: 800px*!*/
+            /*transition: all 0.4s ease;*/
+            /*transform: translate(150px, 150px) scale(0) rotate(45deg);*/
+        /*}*/
+
+        /*.menu {*/
+            /*height: auto;*/
+            /*width: 200px;*/
+            /*margin: 0 auto;*/
+            /*!*visibility: hidden;*!*/
+            /*!*display: none;*!*/
+        /*}*/
+
+        /*.item {*/
+            /*width: 100%;*/
+            /*height: auto;*/
+            /*!*display: block;*!*/
+        /*}*/
+
+        /*.item > h3 {*/
+            /*background-color: #bfa;*/
+            /*height: 40px;*/
+            /*line-height: 40px;*/
+            /*color: orangered;*/
+            /*padding-left: 5px;*/
+            /*border-bottom: 1px solid #ccc;*/
+        /*}*/
+
+        /*.itemBox {*/
+            /*width: 100%;*/
+            /*height: 0;*/
+            /*!*display: none;*!*/
+            /*overflow: hidden;*/
+            /*transition: height 0.4s;*/
+        /*}*/
+
+        /*.itemBox ul {*/
+            /*list-style: none;*/
+            /*padding: 10px;*/
+            /*background-color: lightseagreen;*/
+        /*}*/
+
+        /*.itemBox ul > li {*/
+            /*font-size: 1rem;*/
+            /*line-height: 1.5;*/
+        /*}*/
+
+        /*.item:hover > .itemBox {*/
+            /*!*display: block;*!*/
+            /*height: 7rem;*/
+        /*}*/
+
+        /*.poker {*/
+            /*width: 80px;*/
+            /*position: relative;*/
+            /*margin: 100px auto;*/
+        /*}*/
+
+        /*.poker > img {*/
+            /*width: 100%;*/
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
+            /*transition: transform 0.4s;*/
+            /*transform-origin: right top;*/
+        /*}*/
+
+        /*.poker:hover > img:nth-of-type(1) {*/
+            /*transform: rotate(90deg);*/
+        /*}*/
+
+        /*.poker:hover > img:nth-of-type(2) {*/
+            /*transform: rotate(180deg);*/
+        /*}*/
+
+        /*.poker:hover > img:nth-of-type(3) {*/
+            /*transform: rotate(270deg);*/
+        /*}*/
+
+        /*.poker:hover > img:nth-of-type(4) {*/
+            /*transform: rotate(360deg);*/
+        /*}*/
+
+        .box {
+            margin: 300px 500px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.4s ease;
+            transform: rotate3d(1, 1, 0, -30deg);
+        }
+
+        .box > div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.8;
+        }
+
+        .front {
+            background-color: #eee;
+            transform: translateZ(100px);
+        }
+
+        .back {
+            background-color: #ddd;
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+
+        .top {
+            background-color: #ccc;
+            transform: translateY(-100px) rotateX(90deg);
+        }
+
+        .bottom {
+            background-color: #bbb;
+            transform: translateY(100px) rotateX(-90deg);
+        }
+
+        .left {
+            background-color: #aaa;
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+
+        .right {
+            background-color: #999;
+            transform: translateX(100px) rotateY(90deg);
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    <div class="front">front</div>
+    <div class="back">back</div>
+    <div class="top">top</div>
+    <div class="bottom">bottom</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+</div>
+<button onclick="getSpin()">Spin</button>
+<script>
+    function getSpin() {
+        setInterval(function () {
+            var box = document.querySelector(".box")
+            var mydeg = parseInt(sessionStorage.getItem("deg")) || 0
+            mydeg += 30
+            box.style.transform = `rotate3d(1, 1, 0, ${mydeg}deg)`
+            box.style.transition = "all 0.1s ease"
+            sessionStorage.setItem("deg", mydeg.toString())
+        }, 100)
+
+    }
+</script>
+<!--<div class="content">这里有一个盒子 这里有一个盒子 这里有一个盒子-->
+<!--</div>-->
+<!--<div class="menu">-->
+<!--<div class="item">-->
+<!--<h3>世界新闻</h3>-->
+<!--<div class="itemBox">-->
+<!--<ul>-->
+<!--<li>中国迈入发达国家行列</li>-->
+<!--<li>中国军力世界第一</li>-->
+<!--<li>普通话成全球通用语言</li>-->
+<!--<li>中国人出国不再需要签证</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="item">-->
+<!--<h3>中国新闻</h3>-->
+<!--<div class="itemBox">-->
+<!--<ul>-->
+<!--<li>中国迈入发达国家行列</li>-->
+<!--<li>中国军力世界第一</li>-->
+<!--<li>普通话成全球通用语言</li>-->
+<!--<li>中国人出国不再需要签证</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="item">-->
+<!--<h3>北京新闻</h3>-->
+<!--<div class="itemBox">-->
+<!--<ul>-->
+<!--<li>中国迈入发达国家行列</li>-->
+<!--<li>中国军力世界第一</li>-->
+<!--<li>普通话成全球通用语言</li>-->
+<!--<li>中国人出国不再需要签证</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="poker">-->
+<!--<img src="rocket.png" alt="">-->
+<!--<img src="rocket.png" alt="">-->
+<!--<img src="rocket.png" alt="">-->
+<!--<img src="rocket.png" alt="">-->
+<!--</div>-->
+</body>
+</html>

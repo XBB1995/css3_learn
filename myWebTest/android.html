@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Android机器人</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            height: 500px;
+            width: 500px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+        }
+        .tel {
+            position: relative;
+            margin: 0 auto;
+            height: 15px;
+        }
+        .tel::before,
+        .tel::after {
+            content: '';
+            display: block;
+            background-color: #77c258;
+            width: 10px;
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tel::before {
+            left: 170px;
+            transform: rotate(-30deg);
+        }
+        .tel::after {
+            right: 170px;
+            transform: rotate(30deg);
+        }
+        .aheader {
+            width: 250px;
+            height: 125px;
+            background-color: #77c258;
+            margin: 10px auto;
+            border-radius: 125px 125px 0 0;
+            position: relative;
+        }
+        .aheader::before,
+        .aheader::after {
+            content: '';
+            display: block;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            position: absolute;
+            bottom: 40px;
+            border-radius: 50%;
+        }
+        .aheader::after {
+            right: 60px;
+        }
+        .aheader::before {
+            left: 60px;
+        }
+        .abody {
+            margin: 10px auto;
+            width: 250px;
+            height: 220px;
+            background-color: #77c258;
+            border-radius: 0 0 30px 30px;
+            position: relative;
+        }
+        .abody::before,
+        .abody::after {
+            content: '';
+            display: block;
+            background-color: #77c258;
+            width: 60px;
+            height: 180px;
+            position: absolute;
+            border-radius: 30px;
+        }
+        .abody::before {
+            left: -70px;
+        }
+        .abody::after {
+            right: -70px;
+        }
+        .afooter {
+            width: 250px;
+            height: 200px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .afooter::before,
+        .afooter::after {
+            content: '';
+            display: block;
+            background-color: #77c258;
+            width: 60px;
+            height: 100px;
+            position: absolute;
+            top: -10px;
+            border-radius: 0 0 30px 30px
+        }
+        .afooter::before {
+            left: 40px;
+        }
+        .afooter::after {
+            right: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="tel"></div>
+    <div class="aheader"></div>
+    <div class="abody"></div>
+    <div class="afooter"></div>
+</div>
+
+</body>
+</html>

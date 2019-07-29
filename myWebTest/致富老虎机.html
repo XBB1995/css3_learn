@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 385px;
+            /*height: 600px;*/
+            margin: 10px auto;
+            background-color: darkblue;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(red, darkblue);
+            box-sizing: border-box;
+            border: 5px solid #000;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            flex: 1;
+        }
+        header > h3 {
+            font-size: 40px;
+            color: red;
+            text-align: center;
+            line-height: 100px;
+        }
+        .view {
+            width: 384px;
+            height: 128px;
+            box-sizing: border-box;
+            border: 5px solid black;
+            border-radius: 20px;
+            margin: 5px auto;
+            position: relative;
+            flex: 1;
+        }
+
+        .pre,
+        .next {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 50%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            transform: translate(0, -50%)
+        }
+
+        .pre {
+            left: -40px;
+        }
+
+        .next {
+            right: -40px;
+        }
+
+        /*.view::before {*/
+        /*content: "←";*/
+        /*display: block;*/
+        /*position: absolute;*/
+        /*top: 50%;*/
+        /*left: 0;*/
+        /*}*/
+        /*.view::after {*/
+        /*content: "→";*/
+        /*display: block;*/
+        /*position: absolute;*/
+        /*top: 50%;*/
+        /*right: 0;*/
+        /*}*/
+        .view > ul {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            /*background-color: #ccc;*/
+            /*transform: rotate3d(1,1,0,-30deg);*/
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        .view > ul > li {
+            width: 33%;
+            height: 100%;
+            /*background-color: #666;*/
+            float: left;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all ease 1s;
+        }
+
+        .view > ul > li > span {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .view > ul > li > span:nth-of-type(1) {
+            background: url("1.png") no-repeat;
+            transform: translateZ(150px);
+        }
+
+        .view > ul > li > span:nth-of-type(2) {
+            background: url("2.png") no-repeat;
+            transform: translateY(-150px) rotateX(90deg);
+        }
+
+        .view > ul > li > span:nth-of-type(3) {
+            background: url("3.png") no-repeat;
+            transform: translateZ(-150px) rotateX(180deg);
+        }
+
+        .view > ul > li > span:nth-of-type(4) {
+            background: url("4.png") no-repeat;
+            transform: translateY(150px) rotateX(-90deg);
+        }
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5px auto;
+            flex: 2;
+        }
+        main > .light {
+            height: 50px;
+            width: 100px;
+            border: 5px solid black;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            align-items: center;
+        }
+        .light > .redlight {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .light > .greenlight {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .light > .yellowlight {
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+        main > a {
+            margin: 5px auto;
+        }
+        main > a > img {
+            width: 100%;
+        }
+        footer {
+            background-color: silver;
+            width: 100%;
+            margin-top: 5px;
+            flex: 1;
+            box-sizing: border-box;
+            border: 5px solid black;
+            border-radius: 10px;
+            padding: 10px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        footer > span {
+            text-align: center;
+            /*height: 30px;*/
+            /*flex:1;*/
+            line-height: 1.5;
+        }
+        footer > span:first-letter {
+            color: green;
+            font-size: 12px;
+            /*float: left;*/
+        }
+        .big {
+            color: red;
+            font-size: 20px;
+        }
+        footer::before {
+            content: '赢了赌场嫩模';
+            display: block;
+            height: 20px;
+            width: 40px;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        footer::after {
+            content: '输了下海干活';
+            display: block;
+            height: 20px;
+            width: 40px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 25px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h3>致富老虎机</h3>
+    </header>
+    <div class="view">
+        <ul>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+        </ul>
+        <a href="javascripts:;" class="pre">&lt;</a>
+        <a href="javascripts:;" class="next">&gt;</a>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+        var index = 0
+        var flag = true
+        $(function () {
+            $(".next").on("click", function () {
+                if (flag) {
+                    index--
+                    flag = false
+                    $("li").each(function (key, value) {
+                        $(this).css({
+                            "transform": "rotateX(" + (index) * 90 + "deg)",
+                            "transition-delay": (key * 0.2) + "s"
+                        })
+                    })
+                    setTimeout(function () {
+                        flag = true
+                    }, 1000)
+                }
+            })
+
+            $(".pre").on("click", function () {
+                if (flag) {
+                    index++
+                    flag = false
+                    $("li").each(function (key, value) {
+                        $(this).css({
+                            "transform": "rotateX(" + (index) * 90 + "deg)",
+                            "transition-delay": (key * 0.2) + "s"
+                        })
+                    })
+                    setTimeout(function () {
+                        flag = true
+                    }, 1000)
+                }
+            })
+        })
+    </script>
+    <main>
+        <div class="light">
+            <div class="redlight"></div>
+            <div class="greenlight"></div>
+            <div class="yellowlight"></div>
+        </div>
+        <a href="">
+            <img src="fly.jpg" alt="">
+        </a>
+    </main>
+    <footer>
+        <span>小赌怡情&nbsp;&nbsp;<span class="big">大</span>赌伤身</span>
+        <span>小赌怡情&nbsp;&nbsp;<span class="big">大</span>赌伤身</span>
+        <span>小赌怡情&nbsp;&nbsp;<span class="big">大</span>赌伤身</span>
+    </footer>
+</div>
+
+</body>
+</html>
